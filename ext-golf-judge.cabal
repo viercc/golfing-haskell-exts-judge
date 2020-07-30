@@ -1,0 +1,23 @@
+cabal-version:       2.0
+name:                ext-golf-judge
+version:             0.1.0.0
+license-file:        LICENSE
+author:              Koji Miyazato
+maintainer:          viercc@gmail.com
+build-type:          Simple
+extra-source-files:  README.md
+
+executable judge
+  hs-source-dir:       src
+  main-is:             Main.hs
+  other-modules:       Exts, Source
+  build-depends:       base >=4.14 && <4.15
+                     , containers
+                     , text
+                     , bytestring
+                     , Cabal ^>=3.2
+                     , process
+                     , filepath
+                     , directory
+  default-language:    Haskell2010
+
