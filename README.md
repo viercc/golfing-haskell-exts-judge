@@ -1,9 +1,9 @@
 # Autojudge "Golfing language extensions"
 
-A code gold challenge decribed in [this post by Taylor Fausak](https://dev.to/tfausak/golfing-language-extensions-2obl)
+A code golf challenge decribed in [this post by Taylor Fausak](https://dev.to/tfausak/golfing-language-extensions-2obl)
 drowned some people into madness.
 
-Manually judging validness was so tiresome and error-prone.
+Manually judging answers for the challenge was so tiresome and error-prone.
 This program automates it.
 
 ## Requirement
@@ -40,11 +40,19 @@ exts=21=21+0
   are in the program, divided by how many extensions required.
 * `SourceStat{..}` -- Exists for the time when you want to measure by bytes
 * `exts=N=E+I` -- Some extensions imply other extensions.
+  
   If an extension `E` implies another extension `I`, enabling `E` also enables `I`.
   This can be overridden by specifying `NoI`. It was not clear how to score:
   
   * One requires `E` but don't require `I` to be enabled
   * One requires both `E` and `I` to be enabled
+  
+  This judge program don't allow former to advertize "require 2 extensions", but allow for latter.
+  When seeing both `E` and `I` in the extensions list file, the judge counts them as 2 extensions,
+  and rejects the former program.
+  
+  The output `exts=N=E+I` means the judge recognizes `N` extensions total, including `I` extensions
+  implied by other extensions listed and `E` extensions no other extensions imply it.
 
 ## Sample inputs
 
@@ -53,6 +61,6 @@ exts=21=21+0
 
 ## Caveat
 
-I think humans can spot easily, but this does not test the case
+This program does not test the case
 2 or more extensions are omitted simultaneously.
 
