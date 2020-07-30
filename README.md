@@ -1,9 +1,9 @@
 # Autojudge "Golfing language extensions"
 
-[This post by Taylor Fausak](https://dev.to/tfausak/golfing-language-extensions-2obl)
-sparked some people into madness of this strange code golf.
+A code gold challenge decribed in [this post by Taylor Fausak](https://dev.to/tfausak/golfing-language-extensions-2obl)
+drowned some people into madness of this strange code golf.
 
-Manually judging validness of this golf was so tiresome and error-prone.
+Manually judging validness was so tiresome and error-prone.
 This program automates it.
 
 ## Requirement
